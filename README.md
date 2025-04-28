@@ -14,21 +14,38 @@ To write a program to prepare EMI calculator using function without return type 
 6.	Stop the program.
 
 ## PROGRAM
-
+    #include<stdio.h>
+    #include<math.h>
+    void calculateEMI(double principal, double rate, int months);
+    int main()
+    {
+    double principal, rate;
+    int months;
+    printf("Enter Principal Amount:\n");
+    scanf("%lf",&principal);
+    printf("Enter Rate of Interest:\n");
+    scanf("%lf",&rate);
+    printf("Enter Number of Months:\n");
+    scanf("%d",&months);
+    calculateEMI(principal, rate, months);
+    return 0;
+    }
+    void calculateEMI(double principal, double rate, int months)
+    {
+    double emi;
+    emi=(principal*pow(1+rate,months)*rate)/(pow(1+rate,months)-1);
+    printf("Monthly EMI is = %.3lf\n", emi);
+    }
 
 ## OUTPUT
 
-
-
-
+![Screenshot 2025-04-28 161115](https://github.com/user-attachments/assets/4c0fdab9-d40a-48f8-a0f6-be9ae088de42)
 
 ## RESULT
 
 Thus the program to prepare EMI calculator using function without return type with arguments has been executed successfully
  
  
-
-
 # EX-12-FIBONACCI-SERIES
 ## AIM
 To write a C program to generate the Fibonacci series for the value 6.
@@ -44,20 +61,30 @@ To write a C program to generate the Fibonacci series for the value 6.
 
 ## PROGRAM
 
+    #include<stdio.h>
+    int main()
+    {
+    int n=6,first=0,second=1,next,i;
+    printf("Fibonacci Series: ");
+    if(n>=1)
+        printf("%d ",first);
+    if(n>=2)
+        printf("%d ",second);
+    for(i=3;i<=n;i++) 
+	{
+        next=first+second;
+        printf("%d ",next);
+        first=second;
+        second=next;
+    }
+    return 0;
+    }
 ## OUTPUT
 
-
-
-
-
-
-
+![Screenshot 2025-04-28 161600](https://github.com/user-attachments/assets/3b75a82e-7f61-4b16-8ea8-cde735923e68)
 
 ## RESULT
 Thus the program to generate the Fibonacci series for the value 6 has been executed successfully.
- 
- 
-
 
 # EX-13-ONE-DIMENSIONAL-ARRAY
 ## AIM
@@ -72,20 +99,26 @@ To write a C program to read n elements as input and print the last element of t
 
 ## PROGRAM
 
+    #include<stdio.h>
+    int main()
+    {
+    int n,i;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(i=0;i<n;i++) 
+	{
+        scanf("%d",&arr[i]);
+    }
+    printf("Last element of the array is: %d\n",arr[n-1]);
+    }
 ## OUTPUT
 
-
-
-
-
-
-
-
+![Screenshot 2025-04-28 161857](https://github.com/user-attachments/assets/4248a4e0-d6cb-420f-88f6-10ccae939085)
 
 ## RESULT
 Thus the program to read n elements as input and print the last element of the array has been executed successfully.
- 
- 
+
 
 
 # EX-14-POSITIVE-ARRAY-ELEMENTS
@@ -102,21 +135,33 @@ To write a C Program to count total number of positive elements in an array.
 
 ## PROGRAM
 
-
+    #include<stdio.h>
+    int main()
+    {
+    int n,i,count=0;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(i=0;i<n;i++)
+	{
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++) 
+	{
+        if(arr[i]>0)
+		{ 
+		count++;
+        }
+    }
+    printf("Total number of positive elements: %d\n", count);
+    }
+    
 ## OUTPUT
 
-
-
-
+![Screenshot 2025-04-28 162229](https://github.com/user-attachments/assets/998ac6a4-d727-401e-b5f7-4bdf3bb7054d)
 
 ## RESULT
 Thus the program to count total number of positive elements in an array has been executed successfully.
-
-
-
-
-
- 
  
 
 
@@ -138,9 +183,35 @@ To write a C program to replace all even elements with 'E' in one dimensional ar
 
 ## Program:
 
+    #include<stdio.h>
+    int main() 
+    {
+    int n,i;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(i=0;i<n;i++)
+	{
+        scanf("%d",&arr[i]);
+    }
+    printf("Updated array:\n");
+    for(i=0;i<n;i++) 
+	{
+        if(arr[i] % 2 == 0)
+		{
+            printf("E ");
+        }
+		else
+		{
+            printf("%d ",arr[i]); // Print the number if odd
+        }
+    }
+
+    return 0;
+    }
 ## Output:
  
-
+![Screenshot 2025-04-28 162559](https://github.com/user-attachments/assets/cc11c492-8318-4733-bb59-42a1f5f06943)
 
 ## Result:
 
